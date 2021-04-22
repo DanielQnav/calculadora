@@ -34,6 +34,9 @@ $(document).ready(function(){
  $("#cero").on("click",function(){
  $("#resultado").append("0");
  });
+ /*$("#punto").on("click",function(){
+  $("#resultado").append(".");
+  });*/
  
  $("#reset").on("click",function(){
  resetear();
@@ -73,10 +76,17 @@ $(document).ready(function(){
 	operacion = "p";
 	limpiar();
  });
+ /*$("#masmenos").on("click", function() {
+  $("#resultado").html = (("#resultado").html * -1);
+});
+ $("#coma").on("click",function(){
+  operandoa = $("#resultado").html();
+   operacion = "";
+   limpiar();
+  });*/
  $("#igual").on("click",function(){
  operandob = $("#resultado").html();
-   resolver();
-   
+   resolver(); 
  });
 });
  
@@ -119,7 +129,8 @@ function resolver(){
  break;
  case "p":                                            //Potencia
  res = Math.pow(parseInt(operandoa), parseInt(operandob));
- break
+ break;
+ 
  }
  resetear();
  $("#resultado").html(res);

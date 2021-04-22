@@ -7,12 +7,12 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<!--Funciones de calculadora con javascript
-	<script src="calculadora_javsc.js"></script>-->
+	<!--Funciones de calculadora con javascript-->
+	<script src="calculadora_javsc.js"></script>
 
-	<!-- Funciones de calculadora con Jquery-->
+	<!-- Funciones de calculadora con Jquery
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="calculadora_JQ.js"></script>
+	<script src="calculadora_JQ.js"></script>-->
 </head>
 
 <body background="Fondo.jpg" onload="init();">
@@ -21,48 +21,49 @@
 			<!--Encabezado de la calculadora-->
 			<div class="card-header p-3 justify-content-center col-12">
 				<h2 class="text-center font-weight-normal" style="color:whitesmoke;">Calculadora</h2>
-				<div class="input-group input-group-sm row justify-content-center ">
-					<span class="input col-lg-6 p-4" style="background: lightblue;" id="resultado"></span>			
+				<div class="input-group input-group-lg">
+					<span class="input col-12 text-center" style="font-size: xx-large; height: 100px ;background: lightblue;" id="resultado"></span>			
 				</div>
 			<!--Teclas superiores: Porcentaje, Raiz y Potencia-->	
 			<div class="card-body">
                 <div class="row justify-content-center">
-					<button style ="background: lightskyblue; color:black;" id="porcentaje" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">%</button>
-                    <button style ="background: lightskyblue; color:black;" id="raiz" type="button" class="btn-outline-primary col-lg-2 col-md-4 col-3">√</button>
-                    <button style ="background: lightskyblue; color:black;" id="potencia" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">P</button>
- <!--Funcionalidad negativa <button id="negativo" type="button" class=" col-lg-2">negativo</button>-->
-                </div>
+					<button style ="height: 75px; background: lightskyblue; color:black;" id="porcentaje" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">%</button>
+                    <button style ="background: lightskyblue; color:black;" id="raiz" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">√</button>
+                    <button style ="background: lightskyblue; color:black;" id="potencia" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">P</button>
+					<button style ="background: limegreen; color:black;" id="masmenos" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">+-</button>
+				</div>	
 
 			<!--Segunda corrida de teclas : 7, 8, 9 y suma -->	
 				<div class="row justify-content-center">
-					<button style ="background: lightskyblue; color:black;" id="siete" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">7</button>
-					<button style ="background: lightskyblue; color:black;" id="ocho" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">8</button>
-					<button style ="background: lightskyblue; color:black;" id="nueve" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">9</button>
-					<button style ="background:limegreen; color:black;" id="suma" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">+</button>
+					<button style ="height: 75px; background: lightskyblue; color:black;" id="siete" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">7</button>
+					<button style ="background: lightskyblue; color:black;" id="ocho" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">8</button>
+					<button style ="background: lightskyblue; color:black;" id="nueve" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">9</button>
+					<button style ="background:limegreen; color:black;" id="suma" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">+</button>
 				</div>
 
 			<!--Tercera corrida de teclas : 4, 5, 6 y resta -->
 				<div class="row justify-content-center">
-					<button style ="background: lightskyblue; color:black;" id="cuatro" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">4</button>
-					<button style ="background: lightskyblue; color:black;" id="cinco" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">5</button>
-					<button style ="background: lightskyblue; color:black;" id="seis" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">6</button>
-					<button style ="background:limegreen; color:black;" id="resta" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">-</button>
+					<button style ="height: 75px; background: lightskyblue; color:black;" id="cuatro" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">4</button>
+					<button style ="background: lightskyblue; color:black;" id="cinco" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">5</button>
+					<button style ="background: lightskyblue; color:black;" id="seis" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">6</button>
+					<button style ="background:limegreen; color:black;" id="resta" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">-</button>
 				</div>
 
 			<!--Cuarta corrida de teclas : 1, 2, 3 y multiplicación -->
 				<div class="row justify-content-center">
-					<button style ="background:lightskyblue; color:black;" id="uno" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">1</button>
-					<button style ="background:lightskyblue; color:black;" id="dos" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">2</button>
-					<button style ="background:lightskyblue; color:black;" id="tres" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">3</button>
-					<button style ="background:limegreen; color:black;" id="multiplicacion" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">*</button>
+					<button style ="height: 75px; background:lightskyblue; color:black;" id="uno" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">1</button>
+					<button style ="background:lightskyblue; color:black;" id="dos" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">2</button>
+					<button style ="background:lightskyblue; color:black;" id="tres" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">3</button>
+					<button style ="background:limegreen; color:black;" id="multiplicacion" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">*</button>
 				</div>
 			
 			<!--Quinta corrida de teclas : C, 0, = y división -->
 				<div class="row justify-content-center">
-					<button style ="background:red; color:black;" id="reset" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">C</button>
-					<button style ="background:lightskyblue; color:black;" id="cero" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">0</button>
-					<button style ="background:blue; color:black;" id="igual" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">=</button>
-					<button style ="background:limegreen; color:black;" id="division" type="button" class="btn-outline-primary col-lg-2 col-md-3 col-2">/</button>
+					<button style ="height: 75px; background:red; color:black;" id="reset" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-3 col-2">C</button>
+					<button style ="background:lightblue; color:black;" id="coma" type="button" class="btn-outline-primary col-lg-2 col-md-2 col-sm-2 col-1">.</button>
+					<button style ="background:lightskyblue; color:black;" id="cero" type="button" class="btn-outline-primary col-lg-2 col-md-2 col-sm-2 col-1">0</button>
+					<button style ="background:blue; color:black;" id="igual" type="button" class="btn-outline-primary col-lg-2 col-md-2 col-sm-3 col-2">=</button>
+					<button style ="background:limegreen; color:black;" id="division" type="button" class="btn-outline-primary col-lg-3 col-md-3 col-sm-2 col-2">/</button>
 				</div>
 			</div>
 		</div>

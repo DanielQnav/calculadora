@@ -9,7 +9,6 @@ function init(){
     var porcentaje = document.getElementById("porcentaje");
     var raiz = document.getElementById("raiz");
     var potencia = document.getElementById("potencia");
-    //var negativo = document.getElementById("negativo");
 	var siete = document.getElementById("siete");
 	var ocho = document.getElementById("ocho");
 	var nueve = document.getElementById("nueve");
@@ -96,11 +95,23 @@ function init(){
         operandon = "pow";
         limpiar();
     }
-    /*negativo.onclick = function(e){
-        operandoa = resultado.textContent;
-        operandon = "neg";
-        limpiar();
-    }*/
+    masmenos.onclick = function() {
+		resultado.textContent = resultado.textContent * -1;
+	};
+	coma.onclick = function() {
+		resultado.textContent += ".";
+		if (!isNaN(resultado.textContent)) {
+			resultado.textContent;
+		} else {
+			resultado.textContent = ".";
+		};
+	c.onclick = function() {
+        resultado.textContent = "";
+        operandoA = 0;
+        operandoB = 0;
+        operacion = "";
+    };
+	};
 	igual.onclick = function(e){
 		operandob = resultado.textContent;
 		resolver();
@@ -121,29 +132,26 @@ function resolver(){
 	var res = 0;
 	switch(operandon){
 		case "+":											//Suma
-		res = parseInt(operandoa) + parseInt(operandob);
+		res = parseFloat(operandoa) + parseFloat(operandob);
 		break;
 		case "-":											//Resta
-		res = parseInt(operandoa) - parseInt(operandob);
+		res = parseFloat(operandoa) - parseFloat(operandob);
 		break;
 		case "*":											//Multiplicación
-		res = parseInt(operandoa) * parseInt(operandob);
+		res = parseFloat(operandoa) * parseFloat(operandob);
 		break;
 		case "/":											//División
-		res = parseInt(operandoa) / parseInt(operandob);
+		res = parseFloat(operandoa) / parseFloat(operandob);
 		break;
         case "%":											//Porcentaje
-        res = (parseInt(operandoa) / parseInt(operandob)*(100));
+        res = (parseFloat(operandoa) / parseFloat(operandob)*(100));
         break;
         case "r2":											//Raíz Cuadrada
-        res = Math.sqrt(parseInt(operandoa));
+        res = Math.sqrt(parseFloat(operandoa));
         break;
         case "pow":											//Potencias
-        res = Math.pow(parseInt(operandoa), parseInt(operandob));
+        res = Math.pow(parseFloat(operandoa), parseFloat(operandob));
         break;
-        /*case "neg":										//Negativo (deshabilitado)
-        res = parseInt(operandoa) = (- parseInt(operandoa));
-        break;*/
 	}
 	resetear();
 	resultado.textContent = res;
